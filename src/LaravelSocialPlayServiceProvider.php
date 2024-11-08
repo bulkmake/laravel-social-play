@@ -78,7 +78,12 @@ class LaravelSocialPlayServiceProvider extends ServiceProvider
 
         // Registering package commands.
         $this->commands([
-            \Bulkmake\LaravelSocialPlay\Console\Commands\ExampleCommand::class,
+            Console\Commands\ExampleCommand::class,
+            Console\Commands\FacebookCreatePost::class,
+            Console\Commands\InstagramCreatePost::class,
+            Console\Commands\PinterestCreatePost::class,
+            Console\Commands\GoogleCreatePost::class,
+            Console\Commands\GoogleCreateMedia::class,
         ]);
     }
 }
