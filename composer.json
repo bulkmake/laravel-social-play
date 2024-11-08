@@ -4,15 +4,15 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Author Name",
-            "email": "author@email.com",
-            "homepage": "http://author.com"
+            "name": "Karan Datwani",
+            "email": "info@bulkmake.com",
+            "homepage": "https://bulkmake.com"
         }
     ],
     "homepage": "https://github.com/bulkmake/laravel-social-play",
     "keywords": ["Laravel", "LaravelSocialPlay"],
     "require": {
-        "illuminate/support": "~9"
+        "illuminate/support": "^10.0|^11.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",

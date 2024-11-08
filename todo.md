@@ -22,8 +22,8 @@ SocailPosts
 - id
 - caption
 - cta_link
-- media = array
-- type = enum
+- media = json
+- type = string
 - scheduled_at = date
 - responses = json
 - status = enum(draft,scheduled,published,error)
@@ -66,3 +66,37 @@ CLI package
 
 
 bulkmake laravel-social-play
+
+
+## How to install
+1. Include inside composer.json:
+
+```json
+"repositories": {
+    "bulkmake/laravel-social-play": {
+        "type": "path",
+        "url": "packages/bulkmake/laravel-social-play",
+        "options": {
+            "symlink": true
+        }
+    }
+}
+"require": {
+    "bulkmake/laravel-social-play": "dev-master"
+}
+```
+
+2. Run migrations via:
+```
+php artisan migrate
+```
+
+3. Publish config via:
+```
+php artisan vendor:publish --tag=social-play.config
+```
+
+4. Available commands:
+```
+php artisan socialplay:example
+```

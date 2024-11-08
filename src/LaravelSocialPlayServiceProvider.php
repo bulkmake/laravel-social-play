@@ -15,7 +15,7 @@ class LaravelSocialPlayServiceProvider extends ServiceProvider
     {
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'bulkmake');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'bulkmake');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         // Publishing is only necessary when using the CLI.
@@ -31,10 +31,10 @@ class LaravelSocialPlayServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/laravel-social-play.php', 'laravel-social-play');
+        $this->mergeConfigFrom(__DIR__.'/../config/social-play.php', 'social-play');
 
         // Register the service the package provides.
-        $this->app->singleton('laravel-social-play', function ($app) {
+        $this->app->singleton('social-play', function ($app) {
             return new LaravelSocialPlay;
         });
     }
@@ -46,7 +46,7 @@ class LaravelSocialPlayServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['laravel-social-play'];
+        return ['social-play'];
     }
 
     /**
@@ -58,25 +58,27 @@ class LaravelSocialPlayServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/laravel-social-play.php' => config_path('laravel-social-play.php'),
-        ], 'laravel-social-play.config');
+            __DIR__.'/../config/social-play.php' => config_path('social-play.php'),
+        ], 'social-play.config');
 
         // Publishing the views.
         /*$this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/bulkmake'),
-        ], 'laravel-social-play.views');*/
+        ], 'social-play.views');*/
 
         // Publishing assets.
         /*$this->publishes([
             __DIR__.'/../resources/assets' => public_path('vendor/bulkmake'),
-        ], 'laravel-social-play.assets');*/
+        ], 'social-play.assets');*/
 
         // Publishing the translation files.
         /*$this->publishes([
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/bulkmake'),
-        ], 'laravel-social-play.lang');*/
+        ], 'social-play.lang');*/
 
         // Registering package commands.
-        // $this->commands([]);
+        $this->commands([
+            \Bulkmake\LaravelSocialPlay\Console\Commands\ExampleCommand::class,
+        ]);
     }
 }
