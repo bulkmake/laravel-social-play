@@ -1,0 +1,41 @@
+{
+    "name": "bulkmake/laravel-social-play",
+    "description": ":package_description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Author Name",
+            "email": "author@email.com",
+            "homepage": "http://author.com"
+        }
+    ],
+    "homepage": "https://github.com/bulkmake/laravel-social-play",
+    "keywords": ["Laravel", "LaravelSocialPlay"],
+    "require": {
+        "illuminate/support": "~9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bulkmake\\LaravelSocialPlay\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bulkmake\\LaravelSocialPlay\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bulkmake\\LaravelSocialPlay\\LaravelSocialPlayServiceProvider"
+            ],
+            "aliases": {
+                "LaravelSocialPlay": "Bulkmake\\LaravelSocialPlay\\Facades\\LaravelSocialPlay"
+            }
+        }
+    }
+}
